@@ -16,7 +16,7 @@
 	<main  class="container">
 		
 		<div style="float: left;">
-		<img src="./img/ch88.JPG" width="653px" height="476px">
+		<img src="./img/ch88.jpg" width="653px" height="476px">
 		</div>
 		<div style="border: 1px; margin:200px 30px 0px; float: left; width:400px;	">
       		<div class="fw-bold fs-3">글자넣자 글자</div>

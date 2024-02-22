@@ -15,25 +15,25 @@ public class ProductRepository {
 	
 	public ProductRepository() {
 		Product chair = new Product("P1234" , "Cesca chair" , 1700000);
-		chair.setDescription("D57 x W46 x H46/79cm, Satin, wood, Rattan" );
+		chair.setDescription("Satin, wood, Rattan" );
 		chair.setCategory("chair");
 		chair.setManufacturer("knoll");
 		chair.setUnitsInStock(1000);
-		chair.setCondition("New");
+		chair.setSize("D57 x W46 x H46/79cm");
 		
 		Product table = new Product("P1235", "Hauge table", 1949000);
-		table.setDescription("D99 x W160 x H74.5cm , oak wood, steel, veneer, lacquered");
+		table.setDescription("oak wood, steel, veneer, lacquered");
 		table.setCategory("table");
 		table.setManufacturer("BoConcept");
 		table.setUnitsInStock(1000);
-		table.setCondition("new");
+		table.setSize("D99 x W160 x H74.5cm");
 		
 		Product sofa = new Product("P1236", "Bolzano sofa", 4000000);
-		sofa.setDescription("D91 x W176 x H42/76cm, 2.5seater, RightDirection, bucle(razio)fabric");
+		sofa.setDescription("2.5seater, RightDirection, bucle(razio)fabric");
 		sofa.setCategory("sofa");
 		sofa.setManufacturer("BoConcept");
 		sofa.setUnitsInStock(1000);
-		sofa.setCondition("new");
+		sofa.setSize("D91 x W176 x H42/76cm");
 		
 		listOfProducts.add(chair);
 		listOfProducts.add(table);

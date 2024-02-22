@@ -11,7 +11,7 @@ public class Product implements Serializable {
 	private String manufacturer;
 	private String category;
 	private long unitsInStock;
-	private String condition;
+	private String size;
 	
 	public Product() {
 		super();
@@ -65,11 +65,11 @@ public class Product implements Serializable {
 	public void setUnitsInStock(long unitsInStock) {
 		this.unitsInStock = unitsInStock;
 	}
-	public String getCondition() {
-		return condition;
+	public String getSize() {
+		return size;
 	}
-	public void setCondition(String condition) {
-		this.condition = condition;
+	public void setSize(String size) {
+		this.size = size;
 	}
 	
 }
