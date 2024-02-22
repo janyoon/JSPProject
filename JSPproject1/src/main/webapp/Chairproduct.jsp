@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="dto.Product" %>
+<%@ page import="dao.ProductRepository"%>
 <jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session" />
 <!DOCTYPE html>
 <html>
@@ -34,7 +35,8 @@
     </main>
     <div style="clear:both;"></div>
     <%
-    	ArrayList<Product> listOfProducts = productDAO.getAllProducts();
+    	ProductRepository dao = ProductRepository.getInstance();
+		ArrayList<Product> listOfProducts = productDAO.getAllProducts();
     %>
     <div class="container">
     	<div class="row" align="center">
@@ -43,6 +45,7 @@
     				Product product = listOfProducts.get(i);
     		%>
     		<div class="col-md-4">
+				<img src="./resources/images/<%=product.getFilename()%>" style="width:100%">
     			<p class="fs-4 fw-bold"><%=product.getPname() %></b>
     			<p>price <%=product.getUnitPrice() %> won</p>
     			<p> <a href="./product.jsp?id=<%=product.getProductId()%>" class="btn btn-secondary" role="button"> 상세 정보&raquo;</a>
