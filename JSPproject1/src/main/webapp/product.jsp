@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="dto.Product" %>
+<%@ page import="dao.ProductRepository"%>
 <jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session" />
 <!DOCTYPE html>
 <html>
@@ -12,13 +13,14 @@
 </head>
 <body>
 	<jsp:include page="menu.jsp" />
-	<main class="container">
-		<img src="#" style="width:610px; height:auto; text-align: center;" >
-	</main>
+	<main class="container text-center p-5 m-5">
 	<%
 		String id = request.getParameter("id");
-		Product product = productDAO.getProductById(id);
+		ProductRepository dao = ProductRepository.getInstance();
+		Product product = dao.getProductById(id);
 	%>
+		<img src="./resource/images/<%=product.getFilename()%>" width="610px" height="auto">
+	</main>
 	<div style="clear:both;"></div>
 	<div class="container">
 		<div class="w-50" style="float:left;">

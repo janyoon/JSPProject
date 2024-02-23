@@ -12,6 +12,7 @@ public class Product implements Serializable {
 	private String category;
 	private long unitsInStock;
 	private String size;
+	private String filename;
 	
 	public Product() {
 		super();
@@ -71,5 +72,15 @@ public class Product implements Serializable {
 	public void setSize(String size) {
 		this.size = size;
 	}
+
+	public String getFilename() {
+		return filename;
+	}
+
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+
+	
 	
 }
