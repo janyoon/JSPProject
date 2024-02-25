@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> 
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="dto.Product" %>
 <%@ page import="dao.ProductRepository"%>
@@ -17,7 +17,7 @@
 	<main  class="container">
 		
 		<div style="float: left;">
-		<img src="./img/ch88.jpg" width="653px" height="476px">
+		<img src="./img/ch88.jpg" width="653px" height="476px" class="mb-5">
 		</div>
 		<div style="border: 1px; margin:200px 30px 0px; float: left; width:400px;	">
       		<div class="fw-bold fs-3">글자넣자 글자</div>
@@ -44,11 +44,13 @@
     			for(int i = 0; i < listOfProducts.size(); i++) {
     				Product product = listOfProducts.get(i);
     		%>
-    		<div class="col-md-4">
-				<img src="./resources/images/<%=product.getFilename()%>" style="width:100%">
-    			<p class="fs-4 fw-bold"><%=product.getPname() %></b>
-    			<p>price <%=product.getUnitPrice() %> won</p>
-    			<p> <a href="./product.jsp?id=<%=product.getProductId()%>" class="btn btn-secondary" role="button"> 상세 정보&raquo;</a>
+    		<div class="col-md-4  ">
+    			<div style="align-items: flex-end; width:160px; height:160px; ">
+					<img src="./resource/images/<%=product.getFilename()%>" style="width:150px; height:auto;" class=""  >
+				</div>
+	    			<p class="fs-4 fw-bold"><%=product.getPname() %></b>
+	    			<p>price <%=product.getUnitPrice() %> won</p>
+	    			<p> <a href="./product.jsp?id=<%=product.getProductId()%>" class="btn btn-secondary" role="button"> 상세 정보&raquo;</a>
     		</div>
     		<%
     			}

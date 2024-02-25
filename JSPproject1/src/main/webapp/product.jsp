@@ -13,14 +13,14 @@
 </head>
 <body>
 	<jsp:include page="menu.jsp" />
-	<main class="container">
-		<img src="./resource/imges/<%=product.getFilename()%>" sytle="width:610px; height:auto;">
-	</main>
+	<main class="container text-center p-5 m-5">
 	<%
 		String id = request.getParameter("id");
 		ProductRepository dao = ProductRepository.getInstance();
 		Product product = dao.getProductById(id);
 	%>
+		<img src="./resource/images/<%=product.getFilename()%>" width="610px" height="auto">
+	</main>
 	<div style="clear:both;"></div>
 	<div class="container">
 		<div class="w-50" style="float:left;">

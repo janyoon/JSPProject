@@ -13,7 +13,7 @@
   <header class="p-2 border-bottom">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+        <a href="./Main.jsp" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
             <span class="fs-4"><b>Fsf</b></span>
         </a>
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 px-3 justify-content-center mb-md-0">

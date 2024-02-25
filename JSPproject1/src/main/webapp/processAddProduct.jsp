@@ -19,7 +19,7 @@
     if(unitPrice.isEmpty())
         price = 0;
     else
-        price = integer.valueOf(unitPrice);
+        price = Integer.valueOf(unitPrice);
 
     long stock;
 
@@ -31,16 +31,16 @@
     ProductRepository dao = ProductRepository.getInstance();
 
     Product newProduct = new Product();
-    newProduct.setProductId();
+    newProduct.setProductId(productId);
     newProduct.setPname(name);
     newProduct.setUnitPrice(price);
     newProduct.setDescription(description);
     newProduct.setManufacturer(manufacturer);
     newProduct.setCategory(category);
-    newProduct.setUnitsInStock(Stock);
+    newProduct.setUnitsInStock(stock);
     newProduct.setSize(size);
 
     dao.addProduct(newProduct);
 
-    response.sendRedirect("Chairproduct.jsp")
+    response.sendRedirect("Chairproduct.jsp");
 %>

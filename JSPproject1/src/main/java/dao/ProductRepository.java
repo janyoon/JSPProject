@@ -27,7 +27,7 @@ public class ProductRepository {
 		chair.setManufacturer("knoll");
 		chair.setUnitsInStock(1000);
 		chair.setSize("D57 x W46 x H46/79cm");
-		chair.setFilename("Cesca.jpg");
+		chair.setFilename("P1234.jpg");
 		
 		Product table = new Product("P1235", "Hauge table", 1949000);
 		table.setDescription("oak wood, steel, veneer, lacquered");
@@ -35,7 +35,7 @@ public class ProductRepository {
 		table.setManufacturer("BoConcept");
 		table.setUnitsInStock(1000);
 		table.setSize("D99 x W160 x H74.5cm");
-		table.setFilename("haugeta.jpg");
+		table.setFilename("P1235.jpg");
 		
 		Product sofa = new Product("P1236", "Bolzano sofa", 4000000);
 		sofa.setDescription("2.5seater, RightDirection, bucle(razio)fabric");
@@ -43,7 +43,7 @@ public class ProductRepository {
 		sofa.setManufacturer("BoConcept");
 		sofa.setUnitsInStock(1000);
 		sofa.setSize("D91 x W176 x H42/76cm");
-		sofa.setFilename("bolzano.jpg");
+		sofa.setFilename("P1236.jpg");
 		
 		listOfProducts.add(chair);
 		listOfProducts.add(table);
