@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> 
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="dto.Product" %>
-<%@ page import="dao.ProductRepository"%>
+<%@ page import="java.sql.*"%>
 <jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session" />
 <!DOCTYPE html>
 <html>
@@ -34,27 +32,35 @@
     	</div>
     </main>
     <div style="clear:both;"></div>
-    <%
-    	ProductRepository dao = ProductRepository.getInstance();
-		ArrayList<Product> listOfProducts = productDAO.getAllProducts();
-    %>
+    
     <div class="container">
     	<div class="row" align="center">
+    	<%@ include file="dbconn.jsp"%>
     		<%
-    			for(int i = 0; i < listOfProducts.size(); i++) {
-    				Product product = listOfProducts.get(i);
-    		%>
-    		<div class="col-md-4  ">
+		    	String sql = "SELECT * FROM PRODUCT WHERE p_category = 'chair'";
+				pstmt = conn.prepareStatement(sql);
+				rs = pstmt.executeQuery();
+				while (rs.next()) {
+   			 %>
+    		<div class="col-sm-3">
     			<div style="align-items: flex-end; width:160px; height:160px; ">
-					<img src="./resource/images/<%=product.getFilename()%>" style="width:150px; height:auto;" class=""  >
+					<img src="./resource/images/<%=rs.getString("p_filename")%>" style="width:150px; height:auto;" class=""  >
 				</div>
-	    			<p class="fs-4 fw-bold"><%=product.getPname() %></b>
-	    			<p>price <%=product.getUnitPrice() %> won</p>
-	    			<p> <a href="./product.jsp?id=<%=product.getProductId()%>" class="btn btn-secondary" role="button"> 상세 정보&raquo;</a>
+	    			<p class="fs-4 fw-bold"><%=rs.getString("p_name") %></p>
+	    			<p>price <%=rs.getString("p_unitprice") %> won</p>
+	    			<p> <a href="./product.jsp?id=<%=rs.getString("p_id")%>" class="btn btn-secondary" role="button"> 상세 정보&raquo;</a>
     		</div>
     		<%
     			}
     		%>
+    		<%	
+			if (rs != null)
+				rs.close();
+ 			if (pstmt != null)
+ 				pstmt.close();
+ 			if (conn != null)
+				conn.close();
+			%>
     	</div>
     </div>
 	
