@@ -1,6 +1,6 @@
 INSERT ALL
     INTO PRODUCT VALUES ('P1231','Cesca chair',1700000,'Satin, Wood, Rattan','chair',
-        'knoll',1000,'D57 x W46 x H46/79cm','P1234,jpg')
+        'knoll',1000,'D57 x W46 x H46/79cm','P1231.jpg')
     INTO PRODUCT VALUES
         ('P1232','Ottawa chair',
         3690000,'polypropylene, steel, satin',
@@ -15,7 +15,7 @@ INSERT ALL
         ('P1234','Hauge table',
         1949000,'oak wood, steel, veneer, lacquered',
         'table','BoConcept',1000,
-        'D99 x W160 x H74.5cm','P1235.jpg')
+        'D99 x W160 x H74.5cm','P1234.jpg')
      INTO PRODUCT VALUES
         ('P1235','B612 table',
         3300000,'laminate, aluminum, steel',
@@ -30,7 +30,7 @@ INSERT ALL
         ('P1237','Bolzano sofa',
         4000000,'2.5seater, RightDirection, bucle(razio)fabric',
         'sofa','BoConcept',1000,
-        'D91 x W176 x H42/76cm','P1236.jpg')
+        'D91 x W176 x H42/76cm','P1237.jpg')
 	INTO PRODUCT VALUES
         ('P1238','Outline sofa',
         9883000,'3seater, leather, steel, wood frame',
@@ -43,6 +43,8 @@ INSERT ALL
         'D202 x W323 x H40/80cm','P1239.jpg')
 
 SELECT * FROM DUAL;
+
+
 
 select * from PRODUCT;
   
