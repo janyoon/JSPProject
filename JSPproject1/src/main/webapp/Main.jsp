@@ -60,8 +60,8 @@
 		  <div class="row align-items-start g-0">
 		    <div class="col-4">
 		     <div style="width:394px; height:394px;">
-				<a href="#">
-					<div style="width:394px; height:394px; background-image:url('./img/chair.jpg'); background-size: cover;" class="position-relative">
+				<a href="./Chairproduct.jsp">
+					<div style="width:394px; height:394px; background-image:url('./img/chair.jpg'); background-size: cover;" class="position-relative" id="chair">
 						<div class="text-white fw-bold fs-1 px-2 position-absolute bottom-0 end-0">
 							Chair
 						</div>
@@ -71,7 +71,7 @@
 		    </div>
 		    <div class="col-4 px-1">
 		      <div style="width:394px; height:394px; float: left;">
-				<a href="#" >
+				<a href="./Tableproduct.jsp" >
 					<div style="width:394px; height:394px; background-image:url('./img/tablemain.jpg'); background-size: cover;" class="position-relative">
 						<div class="text-white fw-bold fs-1 px-2 position-absolute bottom-0 end-0">
 							Table
@@ -82,7 +82,7 @@
 		    </div>
 		    <div class="col-4 px-2">
 		      <div style="width:394px; height:394px; float: left;">
-			<a href="#" >
+			<a href="./Sofaproduct.jsp" >
 				<div style="width:394px; height:394px; background-image:url('./img/sofa.jpg'); background-size: cover;" class="position-relative">
 					<div class="text-white fw-bold fs-1 px-2 position-absolute bottom-0 end-0">
 						Sofa

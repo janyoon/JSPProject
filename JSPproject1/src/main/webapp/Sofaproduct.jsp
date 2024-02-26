@@ -15,7 +15,7 @@
 	<main  class="container">
 		
 		<div style="float: left;">
-		<img src="./img/ch88.jpg" width="653px" height="476px" class="mb-5">
+		<img src="./img/janstyle.jpg" width="685px" height="476px" class="mb-5">
 		</div>
 		<div style="border: 1px; margin:200px 30px 0px; float: left; width:400px;	">
       		<div class="fw-bold fs-3">글자넣자 글자</div>
@@ -37,7 +37,7 @@
     	<div class="row" align="center">
     	<%@ include file="dbconn.jsp"%>
     		<%
-		    	String sql = "SELECT * FROM PRODUCT WHERE p_category = 'chair'";
+		    	String sql = "SELECT * FROM PRODUCT WHERE p_category = 'sofa'";
 				pstmt = conn.prepareStatement(sql);
 				rs = pstmt.executeQuery();
 				while (rs.next()) {

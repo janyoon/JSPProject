@@ -1,74 +1,93 @@
 package dao;
 
-import java.util.ArrayList;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.*;
 
 import dto.Product;
+import mvc.database.DBConnection;
 
-public class ProductRepository {
+public class ProductRepository{
+   
+   private ArrayList<Product> listOfProducts = new ArrayList<Product>();
+   private static ProductRepository instance = new ProductRepository();
+   
+   public static ProductRepository getInstance() {
+      return instance;
+   }
+   
+   public ProductRepository() {
+      
+      Connection conn = null;
+      PreparedStatement pstmt = null;
+      ResultSet rs = null;
+      
+      String sql = "select * from product";
+      
+      try {
+         conn = DBConnection.getConnection();
+         pstmt = conn.prepareStatement(sql);
+         rs = pstmt.executeQuery();
+         
+         while(rs.next()) {
+            
 
-	private ArrayList<Product> listOfProducts = new ArrayList<Product>();
-	private static ProductRepository instance = new ProductRepository();
-
-	public static ProductRepository getInstance(){
-		return instance;
-	}
-	
-	public ArrayList<Product> getAllProducts() {
-		return listOfProducts;
-	}
-
-	
-	
-	
-	public ProductRepository() {
-		Product chair = new Product("P1234" , "Cesca chair" , 1700000);
-		chair.setDescription("Satin, wood, Rattan" );
-		chair.setCategory("chair");
-		chair.setManufacturer("knoll");
-		chair.setUnitsInStock(1000);
-		chair.setSize("D57 x W46 x H46/79cm");
-		chair.setFilename("P1234.jpg");
-		
-		Product table = new Product("P1235", "Hauge table", 1949000);
-		table.setDescription("oak wood, steel, veneer, lacquered");
-		table.setCategory("table");
-		table.setManufacturer("BoConcept");
-		table.setUnitsInStock(1000);
-		table.setSize("D99 x W160 x H74.5cm");
-		table.setFilename("P1235.jpg");
-		
-		Product sofa = new Product("P1236", "Bolzano sofa", 4000000);
-		sofa.setDescription("2.5seater, RightDirection, bucle(razio)fabric");
-		sofa.setCategory("sofa");
-		sofa.setManufacturer("BoConcept");
-		sofa.setUnitsInStock(1000);
-		sofa.setSize("D91 x W176 x H42/76cm");
-		sofa.setFilename("P1236.jpg");
-		
-		listOfProducts.add(chair);
-		listOfProducts.add(table);
-		listOfProducts.add(sofa);
-		
-		
-	}
-	
-	public void addProduct(Product product) {
-		listOfProducts.add(product);
-	}
-
-	public Product getProductById(String productId) {
-		Product productById = null;
-		
-		for(int i = 0; i < listOfProducts.size(); i++) {
-			Product product = listOfProducts.get(i);
-			if (product != null && product.getProductId() != null && product.getProductId().equals(productId)) 
-			{
-				productById = product;
-				break;
-			}
-		}
-		return productById;
-	
-	}	
-	
+            Product fn  = new Product();
+            
+            fn.setProductId(rs.getString("p_id"));
+            fn.setPname(rs.getString("p_name"));
+            fn.setUnitPrice(rs.getInt("p_unitPrice"));
+            fn.setDescription(rs.getString("p_description"));
+            fn.setManufacturer(rs.getString("p_category"));
+            fn.setCategory(rs.getString("p_manufacturer"));
+            fn.setUnitsInStock(rs.getLong("p_unitsInStock"));
+            fn.setSize(rs.getString("p_size"));
+            fn.setFilename(rs.getString("p_fileName"));
+      
+            listOfProducts.add(fn);
+         }
+      }catch(Exception ex) {
+         System.out.println("getListCount() 에러 : " + ex);
+      }finally {
+         try {
+            if(rs != null)
+               rs.close();
+            if(pstmt != null)
+               pstmt.close();
+            if(conn != null)
+               conn.close();
+         }catch(Exception ex){
+            throw new RuntimeException(ex.getMessage());
+         }
+      }
+      
+   
+   }
+   
+   public ArrayList<Product> getAllProducts(){
+      return listOfProducts;
+   }
+   
+   public Product getProductById(String productId) {
+      Product productById = null;
+      
+      for(int i = 0; i < listOfProducts.size(); i++) {
+         Product product = listOfProducts.get(i);
+         
+         if(product != null && product.getProductId() != null && product.getProductId().equals(productId)) {
+            productById = product;
+            break;
+         }
+      }
+      
+      return productById;
+   }
+   
+   public void addProduct(Product product) {
+      listOfProducts.add(product);
+   }
+   
 }
