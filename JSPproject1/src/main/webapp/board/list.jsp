@@ -27,26 +27,34 @@
 </head>
 <body>
 	<jsp:include page="../menu.jsp" />
-	<div class="jumbotron">
-		<div class="container">
-			<h1 class="display-3">게시판</h1>
+	<div class="container d-flex justify-content-center flex-column"  >
+		<div class="container pt-5">
+			<p class="fw-bold mt-3 fs-1 " style="margin:0px 122px 0px;">QnA</p>
+			<p class="fs-3" style="margin:0px 122px 0px;">목록</p>
 		</div>
-	</div>
+	<br>
 	<div class="container">
 		<form action="<c:url value="./BoardListAction.do"/>" method="post">
 			<div>
-				<div class="text-right">
-					<span class="badge badge-success">전체 <%=total_record%>건	</span>
+				<div class="text-right d-flex justify-content-between">
+					<span class="badge badge-success text-black" style="margin:0px 122px 0px;">전체 <%=total_record%>건	</span>
+					<span style="margin:0px 200px 0px;">
+					<select name="items" class="txt"  >
+								<option value="subject">제목에서</option>
+								<option value="content">본문에서</option>
+								<option value="name">글쓴이에서</option>
+					</select> <input name="text" type="text" /> <input type="submit" id="btnAdd" class="btn btn-secondary " style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" value="검색 " />
+					</span>
 				</div>
 			</div>
-			<div style="padding-top: 50px">
+			<div class="pt-1 w-75 " style="margin:0px 122px 0px;" >
 				<table class="table table-hover">
 					<tr>
-						<th>번호</th>
+						<th>No.</th>
 						<th>제목</th>
 						<th>작성일</th>
 						<th>조회</th>
-						<th>글쓴이</th>
+						<th>이름</th>
 					</tr>
 					<%
 						for (int j = 0; j < boardList.size(); j++) {
@@ -80,24 +88,13 @@
 					</a>
 				</c:forEach>
 			</div>
-			<div align="left">
+			<div align="right" style="margin:0px 200px 0px 122px;" >
 				<table>
-					<tr>
-						<td width="100%" align="left">&nbsp;&nbsp; 
-						<select name="items" class="txt">
-								<option value="subject">제목에서</option>
-								<option value="content">본문에서</option>
-								<option value="name">글쓴이에서</option>
-						</select> <input name="text" type="text" /> <input type="submit" id="btnAdd" class="btn btn-primary " value="검색 " />
-						</td>
-						<td width="100%" align="right">
-							<a href="#" onclick="checkForm(); return false;" class="btn btn-primary">&laquo;글쓰기</a>
-						</td>
-					</tr>
+					<a href="#" onclick="checkForm(); return false;" class="btn btn-secondary">&laquo;글쓰기</a>
 				</table>
 			</div>
 		</form>
-		<hr>
+		</div>
 	</div>
 	<jsp:include page="../footer.jsp" />
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>

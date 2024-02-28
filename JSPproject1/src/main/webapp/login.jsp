@@ -9,12 +9,12 @@
 	<jsp:include page="menu.jsp" />
 	<div class="jumbotron">
 		<div class="container">
-			<h1 class="display-3">로그인</h1>
+			<p class="fw-bold text-center" style="font-size: 85px;">Fsf</p>
 		</div>
 	</div>
 	<div class="container" align="center">
+		<h2 class="text-center">Login</h2>
 		<div class="col-md-4 col-md-offset-4">
-			<h3 class="form-signin-heading">Please sign in</h3>
 			<%
 				String error = request.getParameter("error");
 				if (error != null) {
@@ -24,14 +24,16 @@
 				}
 			%>
 			<form class="form-signin" action="j_security_check" method="post">
-				<div class="form-group">
-					<label for="inputUserName" class="sr-only">User Name</label> 
+				<div class="form-group pb-4">
+					<label for="inputUserName" class="sr-only"></label> 
 					<input	type="text" class="form-control" placeholder="ID"	name='j_username' required autofocus>
 				</div>
 				<div class="form-group">
-					<label for="inputPassword" class="sr-only">Password</label> 
+					<label for="inputPassword" class="sr-only"></label> 
 					<input 	type="password" class="form-control" placeholder="Password" name='j_password' required>
 				</div>
+				<br>
+				<br>
 				<button class="btn btn btn-lg btn-success btn-block" type="submit">로그인</button>
 			</form>
 		</div>

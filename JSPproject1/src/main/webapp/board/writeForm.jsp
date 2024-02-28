@@ -28,26 +28,27 @@
 </script>
 <body>
 	<jsp:include page="../menu.jsp" />
-	<div class="jumbotron">
-		<div class="container">
-			<h1 class="display-3">게시판</h1>
+	<div class="container d-flex justify-content-center flex-column"  >
+		<div class="container pt-5">
+			<p class="fw-bold mt-3 fs-1 " style="margin:0px 122px 0px;">QnA</p>
+			<p class="fs-3" style="margin:0px 122px 0px;">글쓰기</p>
 		</div>
-	</div>
-
+	<br>
 	<div class="container">
-
+		<div class="pt-1 w-75 " style="margin:0px 122px 0px;" >
 		<form name="newWrite" action="./BoardWriteAction.do"
 			class="form-horizontal" method="post" onsubmit="return checkForm()">
 			<input name="id" type="hidden" class="form-control"
 				value="${sessionId}">
-			<div class="form-group row">
+				<hr>
+			<div class="form-group row mb-2">
 				<label class="col-sm-2 control-label" >성명</label>
 				<div class="col-sm-3">
 					<input name="name" type="text" class="form-control" value="<%=name %>"
 						placeholder="name">
 				</div>
 			</div>
-			<div class="form-group row">
+			<div class="form-group row mb-2">
 				<label class="col-sm-2 control-label" >제목</label>
 				<div class="col-sm-5">
 
@@ -55,20 +56,23 @@
 						placeholder="subject">
 				</div>
 			</div>
-			<div class="form-group row">
+			<div class="form-group row mb-4">
 				<label class="col-sm-2 control-label" >내용</label>
 				<div class="col-sm-8">
 					<textarea name="content" cols="50" rows="5" class="form-control"
 						placeholder="content"></textarea>
 				</div>
 			</div>
+			<hr>
 			<div class="form-group row">
-				<div class="col-sm-offset-2 col-sm-10 ">
-				 <input type="submit" class="btn btn-primary " value="등록 ">				
-					 <input type="reset" class="btn btn-primary " value="취소 ">
+				<div class="col-sm-offset-2 col-sm-10   d-flex justify-content-end">
+				 <input type="submit" class="btn btn-success " value="등록 ">	&nbsp;			
+					 <input type="reset" class="btn btn-secondary " value="취소 ">
 				</div>
 			</div>
 		</form>
+		</div>
+		</div>
 		<hr>
 	</div>
 	<jsp:include page="../footer.jsp" />

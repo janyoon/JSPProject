@@ -26,48 +26,49 @@
 </head>
 <body>
 	<jsp:include page="/menu.jsp" />
-	<div class="jumbotron">
-		<div class="container">
-			<h1 class="display-3">회원 가입</h1>
-		</div>
+	<div class="container pt-4">
+		<p class="fw-bold text-center" style="font-size: 85px;">Fsf</p>
+		<div class="w-45 mt-4" style="float: left; margin:0px 10px 0px 400px;">
+            <h1 class="m-0 fw-bold">회원가입</h1>
+     	</div>
 	</div>
 
-	<div class="container">
+	<div class="bg-secondary bg-opacity-10 p-4 m-4" style="float: left; width:600px; ">
 		<form name="newMember" class="form-horizontal"  action="processAddMember.jsp" method="post" onsubmit="return checkForm()">
-			<div class="form-group  row">
-				<label class="col-sm-2 ">아이디</label>
+			<div class="form-group row mb-2">
+				<label class="col-sm-3 ">아이디</label>
 				<div class="col-sm-3">
 					<input name="id" type="text" class="form-control" placeholder="id" >
 				</div>
 			</div>
-			<div class="form-group  row">
-				<label class="col-sm-2">비밀번호</label>
+			<div class="form-group row mb-1">
+				<label class="col-sm-3">비밀번호</label>
 				<div class="col-sm-3">
 					<input name="password" type="text" class="form-control" placeholder="password" >
 				</div>
 			</div>
-			<div class="form-group  row">
-				<label class="col-sm-2">비밀번호확인</label>
+			<div class="form-group row mb-2">
+				<label class="col-sm-3">비밀번호 확인</label>
 				<div class="col-sm-3">
-					<input name="password_confirm" type="text" class="form-control" placeholder="password confirm" >
+					<input name="password_confirm" type="text" class="form-control" placeholder="pw confirm" >
 				</div>
 			</div>
-			<div class="form-group  row">
-				<label class="col-sm-2">성명</label>
+			<div class="form-group row mb-2">
+				<label class="col-sm-3">성명</label>
 				<div class="col-sm-3">
 					<input name="name" type="text" class="form-control" placeholder="name" >
 				</div>
 			</div>
 			<div class="form-group  row">
-				<label class="col-sm-2">성별</label>
-				<div class="col-sm-10">
+				<label class="col-sm-3 mb-2">성별</label>
+				<div class="col-sm-8">
 					<input name="gender" type="radio" value="남" /> 남 
 					<input name="gender" type="radio" value="여" /> 여
 				</div>
 			</div>
-			<div class="form-group row">
-				<label class="col-sm-2">생일</label>
-				<div class="col-sm-4  ">
+			<div class="form-group row mb-2">
+				<label class="col-sm-3">생일</label>
+				<div class="col-sm-8  ">
 					<input type="text" name="birthyy" maxlength="4" placeholder="년(4자)" size="6"> 
 					<select name="birthmm">
 						<option value="">월</option>
@@ -86,9 +87,9 @@
 					</select> <input type="text" name="birthdd" maxlength="2" placeholder="일" size="4">
 				</div>
 			</div>
-			<div class="form-group  row ">
-				<label class="col-sm-2">이메일</label>
-				<div class="col-sm-10">
+			<div class="form-group row mb-2">
+				<label class="col-sm-3">이메일</label>
+				<div class="col-sm-8">
 					<input type="text" name="mail1" maxlength="50">@ 
 					<select name="mail2">
 						<option>naver.com</option>
@@ -98,15 +99,15 @@
 					</select>
 				</div>				
 			</div>
-			<div class="form-group  row">
-				<label class="col-sm-2">전화번호</label>
+			<div class="form-group row mb-2">
+				<label class="col-sm-3">전화번호</label>
 				<div class="col-sm-3">
 					<input name="phone" type="text" class="form-control" placeholder="phone" >
 
 				</div>
 			</div>
-			<div class="form-group  row">
-				<label class="col-sm-2 ">주소</label>
+			<div class="form-group row mb-4">
+				<label class="col-sm-3">주소</label>
 				<div class="col-sm-5">
 					<input name="address" type="text" class="form-control" placeholder="address">
 

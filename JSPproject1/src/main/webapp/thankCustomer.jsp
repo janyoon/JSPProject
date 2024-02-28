@@ -41,7 +41,7 @@
 		<p>	주문번호 :	<%	out.println(shipping_cartId);	%>		
 	</div>
 	<div class="container">
-		<p>	<a href="./products.jsp" class="btn btn-secondary"> &laquo; 상품 목록</a>		
+		<p>	<a href="./Main.jsp" class="btn btn-secondary"> &laquo; 메인으로</a>		
 	</div>
 	<jsp:include page="footer.jsp"/>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>

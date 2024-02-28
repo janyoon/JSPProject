@@ -48,7 +48,7 @@
    			 %>
     		<div class="col-sm-3">
     			<div style="align-items: flex-end; width:160px; height:160px; ">
-					<img src="./resource/images/<%=rs.getString("p_filename")%>" style="width:150px; height:auto;" class=""  >
+					<img src="./upload2/<%=rs.getString("p_filename")%>" style="width:150px; height:auto;" class=""  >
 				</div>
 	    			<p class="fs-4 fw-bold"><%=rs.getString("p_name") %></p>
 	    			<p>price <%=rs.getString("p_unitprice") %> won</p>

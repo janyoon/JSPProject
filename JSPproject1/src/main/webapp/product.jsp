@@ -37,7 +37,7 @@
 	%>
 	<div class="container">
 	<main class="p-5 m-5 d-flex justify-content-center">
-		<img src="./resource/images/<%=rs.getString("p_filename")%>" width="610px" height="auto" >
+		<img src="./upload2/<%=rs.getString("p_filename")%>" width="610px" height="auto" >
 	</main>
 	</div>
 	<div style="clear:both;"></div>

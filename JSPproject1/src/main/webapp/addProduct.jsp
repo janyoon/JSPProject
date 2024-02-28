@@ -18,13 +18,12 @@
     <div class="container">
         <div class="w-25 " style="float: left;">
             <p class="fw-bold" style="font-size: 85px;">Fsf</p>
-            <h1 class="m-0 fw-bold">제품등록</h2>
+            <h1 class="m-0 fw-bold">제품등록</h1>
         </div>
         <div class="w-70 bg-secondary bg-opacity-25 p-4" style="float: left;">
             <div class="container">
 	            <div class="d-flex justify-content-end "> 
 					<a href="?language=ko" >Korean </a>| <a href="?language=en" class="pe-1" >English</a>
-					<a href="logout.jsp" class="btn btn-sm btn-success pull-right">logout</a>   
 				</div>
                 <form name="newProduct" action="./processAddProduct.jsp" class="form-horizontal" method="post" enctype ="multipart/form-data">
                     <div class="form-group row mb-1">

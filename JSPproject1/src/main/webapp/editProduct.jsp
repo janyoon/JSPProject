@@ -20,28 +20,32 @@
 </head>
 <body>
 	<jsp:include page="menu.jsp" />
-	<div class="jumbotron">
-		<div class="container">
-			<h1 class="display-3">상품 편집</h1>
+		<div class="container pt-3">
+			<h1 class="m-0 fw-bold">상품 편집</h1>
 		</div>
-	</div>
 
 	<div class="container">
-		<div class="row" align="center">
+		<div class="row d-flex flex-wrap-reverse" align="center">
+			
 			<%@ include file="dbconn.jsp"%>
 			<%
 				PreparedStatement pstmt = null;
 				ResultSet rs = null;	
 			
 				String sql = "select * from product";
+				
 				pstmt = conn.prepareStatement(sql);
 				rs = pstmt.executeQuery();
 				while (rs.next()) {
 			%>
-			<div class="col-md-3" style="width:200px; height:200px;">
-				<img src="./upload2/<%=rs.getString("p_fileName")%>" style="width: 100%">
-				<h3><%=rs.getString("p_name")%></h3>
-				<p><%=rs.getString("p_unitPrice")%>원
+			
+			<div class="col-sm-4">
+				<div style="align-items: flex-end; width:160px; height:160px; ">
+					<img src="./upload2/<%=rs.getString("p_fileName")%>" style="width: 100%">
+				</div>
+				<p><b><%=rs.getString("p_category")%></b></p>
+				<b><%=rs.getString("p_name")%></b>
+				<p><%=rs.getString("p_unitPrice")%>원</p>
 				<p>
 					<%
 						if (edit.equals("update")) {

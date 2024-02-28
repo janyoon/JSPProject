@@ -16,46 +16,51 @@
 </head>
 <body>
 	<jsp:include page="../menu.jsp" />
-	<div class="jumbotron">
-		<div class="container">
-			<h1 class="display-3">게시판</h1>
+	<div class="container d-flex justify-content-center flex-column"  >
+		<div class="container pt-5">
+			<p class="fw-bold mt-3 fs-1 " style="margin:0px 122px 0px;">QnA</p>
+			<p class="fs-3" style="margin:0px 122px 0px;">게시물 보기</p>
 		</div>
-	</div>
-
+	<br>
 	<div class="container">
+		<div class="pt-1 w-75 " style="margin:0px 122px 0px;" >
+		<hr>
 		<form name="newUpdate"
 			action="BoardUpdateAction.do?num=<%=notice.getNum()%>&pageNum=<%=nowpage%>"
 			class="form-horizontal" method="post">
-			<div class="form-group row">
+			<div class="form-group row mb-2">
 				<label class="col-sm-2 control-label" >성명</label>
 				<div class="col-sm-3">
 					<input name="name" class="form-control"	value="<%=notice.getName()%>">
 				</div>
 			</div>
-			<div class="form-group row">
+			<div class="form-group row mb-2">
 				<label class="col-sm-2 control-label" >제목</label>
 				<div class="col-sm-5">
 					<input name="subject" class="form-control"	value="<%=notice.getSubject()%>" >
 				</div>
 			</div>
-			<div class="form-group row">
+			<div class="form-group row mb-4">
 				<label class="col-sm-2 control-label" >내용</label>
 				<div class="col-sm-8" style="word-break: break-all;">
 					<textarea name="content" class="form-control" cols="50" rows="5"><%=notice.getContent()%></textarea>
 				</div>
 			</div>
+			<hr>
 			<div class="form-group row">
-				<div class="col-sm-offset-2 col-sm-10 ">
+				<div class="col-sm-offset-2 col-sm-10   d-flex justify-content-end">
 					<c:set var="userId" value="<%=notice.getId()%>" />
 					<c:if test="${sessionId==userId}">
 						<p>
 							<a	href="./BoardDeleteAction.do?num=<%=notice.getNum()%>&pageNum=<%=nowpage%>"	class="btn btn-danger"> 삭제</a> 
-							<input type="submit" class="btn btn-success" value="수정 ">
+							<input type="submit" class="btn btn-info" value="수정">
 					</c:if>
-					<a href="./BoardListAction.do?pageNum=<%=nowpage%>"		class="btn btn-primary"> 목록</a>
+					<a href="./BoardListAction.do?pageNum=<%=nowpage%>"		class="btn btn-secondary"> 목록</a>
 				</div>
 			</div>
 		</form>
+		</div>
+		</div>
 		<hr>
 	</div>
 	<jsp:include page="../footer.jsp" />

@@ -17,20 +17,22 @@
       <img src="./img/main.jpg" height=550px class="mb-2">
       <img src="./img/main2.jpg" height=550px class="px-1 mb-2">
     </div>
-    <div style="border: 1px; margin:230px 20px 0px; float: left; width:400px;	">
-      <div class="fw-bold fs-3">글자넣자 글자</div>
-        <p>
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-           sed do eiusmod tempor incididunt ut labore et dolore ma
-           gna aliqua. Ut enim ad minim veniam, quis nostrud exer
-           citation ullamco laboris nisi ut aliquip ex ea commodo co
-           nsequat. Duis aute irure dolor in reprehenderit in volupta
-           te velit esse cillum dolore eu fugiat nulla pariatur. Except
-           eur sint occaecat cupidatat non proident, sunt in culpa q
-           ui officia deserunt mollit anim id est laborum."
-        </p>
-        <div class="d-grid gap-2 col-6 mx-auto mb-3">
-          <button class="btn btn-secondary" type="button">Button</button>
+    <div style="border: 1px; margin:0px 20px 0px; float: left; width:400px; height:558px;" class="d-flex align-content-end flex-wrap align-items-end">
+      <div class="fw-bold fs-3 justify-content-start">글자넣자 글자</div>
+	    <div class="d-flex flex-row justify-content-center flex-wrap align-items-end">
+	        <p>
+	          "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+	           sed do eiusmod tempor incididunt ut labore et dolore ma
+	           gna aliqua. Ut enim ad minim veniam, quis nostrud exer
+	           citation ullamco laboris nisi ut aliquip ex ea commodo co
+	           nsequat. Duis aute irure dolor in reprehenderit in volupta
+	           te velit esse cillum dolore eu fugiat nulla pariatur. Except
+	           eur sint occaecat cupidatat non proident, sunt in culpa q
+	           ui officia deserunt mollit anim id est laborum."
+	       	</p>
+	        <div class="d-grid gap-2 col-6 mx-auto mb-3">
+	          <button class="btn btn-secondary" type="button">Button</button>
+	        </div>
         </div>
     </div>
    <div style="clear:both;"></div>
@@ -70,7 +72,7 @@
 			</div>
 		    </div>
 		    <div class="col-4 px-1">
-		      <div style="width:394px; height:394px; float: left;">
+		      <div style=" float: left;" class="w-100%">
 				<a href="./Tableproduct.jsp" >
 					<div style="width:394px; height:394px; background-image:url('./img/tablemain.jpg'); background-size: cover;" class="position-relative">
 						<div class="text-white fw-bold fs-1 px-2 position-absolute bottom-0 end-0">

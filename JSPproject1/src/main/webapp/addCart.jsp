@@ -6,7 +6,7 @@
 <%
 	String id = request.getParameter("id");
 	if (id == null || id.trim().equals("")) {
-		response.sendRedirect("products.jsp");
+		response.sendRedirect("Main.jsp");
 		return;
 	}
 
@@ -15,6 +15,7 @@
 	Product product = dao.getProductById(id);
 	if (product == null) {
 		response.sendRedirect("exceptionNoProductId.jsp");
+		return;
 	}
 
 	ArrayList<Product> goodsList = dao.getAllProducts();
@@ -49,4 +50,5 @@
 	}
 
 	response.sendRedirect("product.jsp?id=" + id);
+	return;
 %>

@@ -10,12 +10,13 @@
 	<jsp:include page="/menu.jsp" />
 	<div class="jumbotron">
 		<div class="container">
-			<h1 class="display-3">로그인</h1>
+			<p class="fw-bold text-center" style="font-size: 85px;">Fsf</p>
 		</div>
 	</div>
 	<div class="container" align="center">
+		<h2 class="text-center">Login</h2>
 		<div class="col-md-4 col-md-offset-4">
-			<h3 class="form-signin-heading">Please sign in</h3>
+
 			<%
 				String error = request.getParameter("error");
 				if (error != null) {
@@ -26,18 +27,27 @@
 			%>
 			<form class="form-signin" action="processLoginMember.jsp" method="post">
 
-				<div class="form-group">
-					<label for="inputUserName" class="sr-only">User Name</label> <input
-						type="text" class="form-control" placeholder="ID" name='id'
+				<div class="form-group pb-4">
+					<label for="inputUserName" class="sr-only"></label> <input
+						type="text" class="form-control pb-2" placeholder="ID" name='id'
 						required autofocus>
 				</div>
 				<div class="form-group">
-					<label for="inputPassword" class="sr-only">Password</label> <input
-						type="password" class="form-control" placeholder="Password"
+					<label for="inputPassword" class="sr-only"></label> <input
+						type="password" class="form-control pb-2" placeholder="Password"
 						name='password' required>
 				</div>
+				<br>
+				<br>
 				<button class="btn btn btn-lg btn-success btn-block" type="submit">로그인</button>
-
+				<div>
+				<br>
+					<a class="nav-link fw-bold text-center" href="/member/addMember.jsp">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-layout-text-sidebar" viewBox="0 0 16 16">
+  						<path d="M3.5 3a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zM3 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+  						<path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm12-1v14h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zm-1 0H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h9z"/>
+  					</svg>&nbsp; Sign-up</a>
+				</div>
 			</form>
 		</div>
 	</div>
