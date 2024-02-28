@@ -37,7 +37,11 @@
     	<div class="row" align="center">
     	<%@ include file="dbconn.jsp"%>
     		<%
+    			PreparedStatement pstmt = null;
+    			ResultSet rs = null;
+    		
 		    	String sql = "SELECT * FROM PRODUCT WHERE p_category = 'sofa'";
+		    	
 				pstmt = conn.prepareStatement(sql);
 				rs = pstmt.executeQuery();
 				while (rs.next()) {

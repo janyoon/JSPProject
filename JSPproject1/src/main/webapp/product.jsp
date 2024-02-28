@@ -23,6 +23,9 @@
 	<%@ include file="dbconn.jsp"%>
 	<%
 		String id = request.getParameter("id");
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+	
 		/* ProductRepository dao = ProductRepository.getInstance();
 		Product product = dao.getProductById(id); */
 		

@@ -5,9 +5,9 @@
 		<role-name>admin</role-name>
 	</security-role>
 	<security-constraint>
-		<display-name>WebMarket Security</display-name>
+		<display-name>JSPproject1 Security</display-name>
 		<web-resource-collection>
-			<web-resource-name>WebMarket3</web-resource-name>
+			<web-resource-name>JSPproject1</web-resource-name>
 			<description></description>
 			<url-pattern>/addProduct.jsp</url-pattern>
 			<url-pattern>/editProduct.jsp</url-pattern>
@@ -25,11 +25,10 @@
 		</form-login-config>
 	</login-config>
 
-<!-- 11장 예외처리 -->
-	<error-page>
-		<error-code>404</error-code>
-		<location>/exceptionNoPage.jsp</location>
-	</error-page>
+<!-- 	<error-page> -->
+<!-- 		<error-code>404</error-code> -->
+<!-- 		<location>/exceptionNoPage.jsp</location> -->
+<!-- 	</error-page> -->
 	
 	<!--  12장 필터 -->
 	<filter>
@@ -46,7 +45,7 @@
 		<filter-class>filter.LogFileFilter</filter-class>
 		<init-param>
 			<param-name>filename</param-name>
-			<param-value>c:\\logs\\webmarket.log</param-value>
+			<param-value>c:\\logs\\JSPproject.log</param-value>
 		</init-param>
 	</filter>
 	<filter-mapping>
@@ -55,15 +54,15 @@
 	</filter-mapping>
 	
 <!-- 	18장 게시판 -->
-<!-- 	<servlet> -->
-<!-- 		<servlet-name>BoardController</servlet-name> -->
-<!-- 		<servlet-class>mvc.controller.BoardController</servlet-class> -->
-<!-- 	</servlet> -->
+	<servlet>
+		<servlet-name>BoardController</servlet-name>
+		<servlet-class>mvc.controller.BoardController</servlet-class>
+	</servlet>
 
-<!-- 	<servlet-mapping> -->
-<!-- 		<servlet-name>BoardController</servlet-name> -->
-<!-- 		<url-pattern>*.do</url-pattern> -->
-<!-- 	</servlet-mapping>	 -->
+	<servlet-mapping>
+		<servlet-name>BoardController</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>	
 	
 </web-app>
 

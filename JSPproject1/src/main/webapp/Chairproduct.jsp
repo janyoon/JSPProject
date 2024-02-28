@@ -37,14 +37,18 @@
     	<div class="row" align="center">
     	<%@ include file="dbconn.jsp"%>
     		<%
+    			PreparedStatement pstmt = null;
+    			ResultSet rs = null;
+    		
 		    	String sql = "SELECT * FROM PRODUCT WHERE p_category = 'chair'";
+		    	
 				pstmt = conn.prepareStatement(sql);
 				rs = pstmt.executeQuery();
 				while (rs.next()) {
    			 %>
     		<div class="col-sm-3">
     			<div style="align-items: flex-end; width:160px; height:160px; ">
-					<img src="./resource/images/<%=rs.getString("p_filename")%>" style="width:150px; height:auto;" class=""  >
+					<img src="./upload2/<%=rs.getString("p_filename")%>" style="width:150px; height:auto;" class=""  >
 				</div>
 	    			<p class="fs-4 fw-bold"><%=rs.getString("p_name") %></p>
 	    			<p>price <%=rs.getString("p_unitprice") %> won</p>
