@@ -12,12 +12,13 @@
 </head>
 <body>
 	<jsp:include page="menu.jsp" />
+	<div class="d-lg-none"><%@ include file="dbconn.jsp"%></div>
 	<main  class="container">
 		
-		<div style="float: left;">
+		<div style="float: left; margin:0px 10px 0px 70px;">
 		<img src="./img/ch88.jpg" width="653px" height="476px" class="mb-5">
 		</div>
-		<div style="border: 1px; margin:200px 30px 0px; float: left; width:400px;	">
+		<div style="border: 1px; margin:200px 70px 0px 10px; float: left; width:400px;	">
       		<div class="fw-bold fs-3">글자넣자 글자</div>
         	<p>
 	          "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -35,18 +36,19 @@
     
     <div class="container">
     	<div class="row" align="center">
-    	<%@ include file="dbconn.jsp"%>
-    		<%
-    			PreparedStatement pstmt = null;
-    			ResultSet rs = null;
-    		
-		    	String sql = "SELECT * FROM PRODUCT WHERE p_category = 'chair'";
-		    	
-				pstmt = conn.prepareStatement(sql);
-				rs = pstmt.executeQuery();
-				while (rs.next()) {
-   			 %>
-    		<div class="col-sm-3">
+    	
+    
+    	<%
+   			PreparedStatement pstmt = null;
+   			ResultSet rs = null;
+   		
+	    	String sql = "SELECT * FROM PRODUCT WHERE p_category = 'chair'";
+	    	
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+		%>
+    		<div class="col-sm-4">
     			<div style="align-items: flex-end; width:160px; height:160px; ">
 					<img src="./upload2/<%=rs.getString("p_filename")%>" style="width:150px; height:auto;" class=""  >
 				</div>

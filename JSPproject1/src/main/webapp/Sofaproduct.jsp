@@ -12,6 +12,7 @@
 </head>
 <body>
 	<jsp:include page="menu.jsp" />
+	<div class="d-lg-none"><%@ include file="dbconn.jsp"%></div>
 	<main  class="container">
 		
 		<div style="float: left;">
@@ -35,8 +36,7 @@
     
     <div class="container">
     	<div class="row" align="center">
-    	<%@ include file="dbconn.jsp"%>
-    		<%
+    	<%
     			PreparedStatement pstmt = null;
     			ResultSet rs = null;
     		
@@ -46,7 +46,7 @@
 				rs = pstmt.executeQuery();
 				while (rs.next()) {
    			 %>
-    		<div class="col-sm-3">
+   			 <div class="col-sm-4">
     			<div style="align-items: flex-end; width:160px; height:160px; ">
 					<img src="./upload2/<%=rs.getString("p_filename")%>" style="width:150px; height:auto;" class=""  >
 				</div>

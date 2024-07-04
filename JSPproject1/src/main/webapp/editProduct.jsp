@@ -20,14 +20,12 @@
 </head>
 <body>
 	<jsp:include page="menu.jsp" />
+	<%@ include file="dbconn.jsp"%>
 		<div class="container pt-3">
 			<h1 class="m-0 fw-bold">상품 편집</h1>
 		</div>
-
 	<div class="container">
-		<div class="row d-flex flex-wrap-reverse" align="center">
-			
-			<%@ include file="dbconn.jsp"%>
+		<div class="row d-flex flex-wrap" align="center">
 			<%
 				PreparedStatement pstmt = null;
 				ResultSet rs = null;	
@@ -38,7 +36,6 @@
 				rs = pstmt.executeQuery();
 				while (rs.next()) {
 			%>
-			
 			<div class="col-sm-4">
 				<div style="align-items: flex-end; width:160px; height:160px; ">
 					<img src="./upload2/<%=rs.getString("p_fileName")%>" style="width: 100%">

@@ -41,10 +41,10 @@
             <li><a href="<c:url value="/BoardListAction.do?pageNum=1"/>" class="nav-link px-2 text-dark">QnA</a></li>
         </ul>
 
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0" role="search">
-            <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+         <form class="col-12 col-lg-auto mb-3 mb-lg-0" role="search" action="search.jsp" method="post">
+            <input type="text" class="form-control" placeholder="Search..." aria-label="Search" name="product_name">
           </form>
-
+          
           <div class="dropdown text-end">
             <a href="#" class="d-block link-body-emphasis px-3 text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
               	<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-balloon-heart-fill" viewBox="0 0 16 16">
